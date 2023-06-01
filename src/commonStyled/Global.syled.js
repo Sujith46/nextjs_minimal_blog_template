@@ -12,8 +12,17 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+body {
+  font-family: ManropeRegular;
+  font-size: 16px;
+  line-height: 24px;
+  /* background-color: whitesmoke; */
+}
+
 a {
   color: inherit;
   text-decoration: none;
+  
 }
 `;

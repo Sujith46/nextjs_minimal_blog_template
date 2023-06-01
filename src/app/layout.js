@@ -2,9 +2,9 @@
 
 import { GlobalStyles } from "@/commonStyled/Global.syled";
 import StyledComponentsRegistry from "@/lib/styled_registry";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Manrope({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",

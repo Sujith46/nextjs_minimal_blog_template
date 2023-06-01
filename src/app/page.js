@@ -1,7 +1,15 @@
+import HeroContent from "@/components/heroContent/HeroContent";
+import Layout from "@/components/layout/Layout";
+import BlogPost from "@/containers/blogPosts/BlogPost";
+
 export default function Home() {
+  
   return (
     <main>
-      <h1>Main</h1>
+      <Layout>
+        <HeroContent />
+        <BlogPost/>
+      </Layout>
     </main>
   )
 }
