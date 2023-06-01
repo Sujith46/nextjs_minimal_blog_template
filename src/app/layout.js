@@ -1,6 +1,5 @@
 "use client";
 
-import { GlobalStyles } from "@/commonStyled/Global.syled";
 import StyledComponentsRegistry from "@/lib/styled_registry";
 import { Manrope } from "next/font/google";
 
