@@ -1,5 +1,6 @@
 "use client"
 
+import { device } from "@/lib/device";
 import { styled } from "styled-components";
 
 const HeroContent = () => {
@@ -18,6 +19,10 @@ export default HeroContent;
 
 const Container = styled.div`
   padding: 32px;
+
+  @media ${device.mobile} {
+    padding: 16px;
+  }
 `;
 
 const Title = styled.h1`
@@ -28,6 +33,12 @@ const Title = styled.h1`
   font-weight: 800;
   margin-bottom: 16px;
   max-width: 800px;
+
+  @media ${device.mobile} {
+    max-width: none;
+    font-size: 32px;
+    line-height: 40px;
+  }
 `;
 
 const SubTitle = styled.h2`

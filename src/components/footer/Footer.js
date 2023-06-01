@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { PrimaryButton } from "../button/Button";
+import { device } from "@/lib/device";
 
 const Footer = () => {
   return (
@@ -23,13 +24,18 @@ const Footer = () => {
 export default Footer;
 
 const Container = styled.footer`
-  margin: 16px 32px;
+  margin: 16px 32px 40px 32px;
   padding: 54px 42px;
   background-color: #5c469c;
   color: white;
   border-radius: 16px;
   position: relative;
   overflow: hidden;
+
+  @media ${device.mobile} {
+    padding: 20px;
+    margin: 16px;
+  }
 `;
 
 const FooterContentContainer = styled.div`
@@ -42,6 +48,11 @@ const Header = styled.h2`
   letter-spacing: -0.8px;
   margin-bottom: 16px;
   max-width: 400px;
+
+  @media ${device.mobile} {
+    font-size: 20px;
+    line-height: 28px;
+  }
 `;
 
 const SubHeader = styled.p`
@@ -60,6 +71,8 @@ const InputContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  position: relative;
+  z-index: 10;
 `;
 
 const TextInput = styled.input`
@@ -81,4 +94,11 @@ const Circle = styled.div`
   position: absolute;
   right: -26px;
   top: 160px;
+
+  @media ${device.mobile} {
+    width: 150px;
+    height: 150px;
+    right: -42px;
+    top: 240px;
+  }
 `;

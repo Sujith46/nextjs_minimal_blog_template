@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 import Avatar from "../../assets/images/avatar.png";
 import Link from "next/link";
 import { PrimaryButton } from "../button/Button";
+import { device } from "@/lib/device";
 
 const Header = () => {
   return (
@@ -14,7 +15,7 @@ const Header = () => {
       </AvatarContainer>
       <MenuItemContainer>
         <MenuItem href={"/"}>Home</MenuItem>
-        <MenuItem href={"/"}>About</MenuItem>
+        <MenuItem href={"/about"}>About</MenuItem>
       </MenuItemContainer>
       {/* <PrimaryButton>📞 Contact Us</PrimaryButton> */}
     </Navbar>
@@ -37,6 +38,10 @@ export const Navbar = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 16px 32px;
+
+  @media ${device.mobile} {
+    padding: 16px;
+  }
 `;
 export const MenuItemContainer = styled.div`
   display: flex;
