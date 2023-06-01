@@ -5,6 +5,8 @@ import { BlogPostGrid } from "./BlogPost.styled";
 
 import HappyChild from "../../assets/images/blog/happy-child.jpg"
 import ColorFull from "../../assets/images/blog/colourfull.jpg";
+import Court from "../../assets/images/blog/supreme-court.jpg";
+import Stretch from "../../assets/images/blog/stretch.jpg";
 
 const BlogPost = () => {
   const blogArray = [
@@ -30,6 +32,7 @@ const BlogPost = () => {
       date: "2023-03-10",
       authorName: "Emily Wilson",
       tag: "Food",
+      img: Court,
     },
     {
       title: "Discovering Ancient Civilizations",
@@ -37,6 +40,7 @@ const BlogPost = () => {
       date: "2023-02-19",
       authorName: "David Thompson",
       tag: "History",
+      img: Stretch,
     },
     {
       title: "The Future of Technology",
