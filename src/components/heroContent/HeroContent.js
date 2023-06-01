@@ -33,7 +33,7 @@ const Title = styled.h1`
 const SubTitle = styled.h2`
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: -1px;
+  letter-spacing: -0.6px;
   font-weight: 400;
   color: #8387ab;
 `;

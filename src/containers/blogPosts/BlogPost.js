@@ -3,6 +3,9 @@
 import Card from "@/components/card/Card";
 import { BlogPostGrid } from "./BlogPost.styled";
 
+import HappyChild from "../../assets/images/blog/happy-child.jpg"
+import ColorFull from "../../assets/images/blog/colourfull.jpg";
+
 const BlogPost = () => {
   const blogArray = [
     {
@@ -11,6 +14,7 @@ const BlogPost = () => {
       date: "2023-05-15",
       authorName: "John Smith",
       tag: "Writing",
+      img: HappyChild
     },
     {
       title: "Exploring the Wonders of Space",
@@ -18,6 +22,7 @@ const BlogPost = () => {
       date: "2023-04-02",
       authorName: "Jane Doe",
       tag: "Science",
+      img: ColorFull,
     },
     {
       title: "Mastering the Art of Cooking",
@@ -50,6 +55,7 @@ const BlogPost = () => {
           subTitle={item.subTitle}
           author={item.authorName}
           publishedDate={item.date}
+          imgURL={item.img}
         />
       ))}
     </BlogPostGrid>

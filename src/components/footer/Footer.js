@@ -12,7 +12,7 @@ const Footer = () => {
         </SubHeader>
       </FooterContentContainer>
       <InputContainer>
-        <TextInput type="email"></TextInput>
+        <TextInput type="email" placeholder="Your e-mail address"></TextInput>
         <PrimaryButton>Subscribe</PrimaryButton>
       </InputContainer>
       <Circle />
@@ -67,11 +67,15 @@ const TextInput = styled.input`
   outline: none;
   padding: 8px;
   width: 100%;
+
+  &&::placeholder {
+    opacity: 0.6;
+  }
 `;
 
 const Circle = styled.div`
   clip-path: circle(50% at 50% 50%);
-  background-color: #D4ADFC;
+  background-color: #d4adfc;
   width: 300px;
   height: 300px;
   position: absolute;

@@ -106,14 +106,14 @@ export const CardPublishedDate = styled.div`
 
 export const CardImageContainer = styled.div`
   img {
-    object-fit: contain;
+    object-fit: cover;
     width: 100% !important;
     position: relative !important;
-    height: unset !important;
+    height: 200px !important;
     border-radius: 24px;
   }
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 `;
 
 const AuthorImage = styled.div`
