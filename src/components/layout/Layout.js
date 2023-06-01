@@ -1,14 +1,17 @@
-"use client"
+"use client";
 
-const { default: Header } = require("../header/Header")
+import Footer from "../footer/Footer";
+
+const { default: Header } = require("../header/Header");
 
 const Layout = ({ children }) => {
-    return (
-        <>
-            <Header/>
-            {children}
-        </>
-    )
-}
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
+};
 
 export default Layout;
