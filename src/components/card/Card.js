@@ -1,13 +1,24 @@
 import Image from "next/image";
+import Link from "next/link";
 import { styled } from "styled-components";
 
 import DefaultImg from "../../assets/images/blog/default.jpg";
+import DefaultAuthorImg from "../../assets/images/avatars/author-default.jpg";
 
-const Card = ({ imgURL, title, subTitle, tag, author, publishedDate }) => {
+const Card = ({
+  imgURL,
+  title,
+  subTitle,
+  tag,
+  author,
+  publishedDate,
+  authorImg,
+}) => {
   const defaultImgRequired = imgURL ? imgURL : DefaultImg;
+  const authorDefaultImg = authorImg ? authorImg : DefaultAuthorImg;
 
   return (
-    <CardContainer>
+    <CardContainer href={"/"}>
       <CardImageContainer>
         <Image src={defaultImgRequired} alt="blog-post-img" />
       </CardImageContainer>
@@ -16,8 +27,13 @@ const Card = ({ imgURL, title, subTitle, tag, author, publishedDate }) => {
         <CardTitle>{title}</CardTitle>
         <CardSubTitle>{subTitle}</CardSubTitle>
         <CardAuthorInfo>
-          <CardAuthorName>{author}</CardAuthorName>
-          <CardPublishedDate>{publishedDate}</CardPublishedDate>
+          <AuthorImage>
+            <Image src={DefaultAuthorImg} alt="author-avatar" />
+          </AuthorImage>
+          <ContentWrapper>
+            <CardAuthorName>{author}</CardAuthorName>
+            <CardPublishedDate>{publishedDate}</CardPublishedDate>
+          </ContentWrapper>
         </CardAuthorInfo>
       </CardContent>
     </CardContainer>
@@ -26,7 +42,7 @@ const Card = ({ imgURL, title, subTitle, tag, author, publishedDate }) => {
 
 export default Card;
 
-const CardContainer = styled.div`
+const CardContainer = styled(Link)`
   padding: 16px;
   border-radius: 24px;
   transition: all 0.3s ease-in-out;
@@ -34,14 +50,15 @@ const CardContainer = styled.div`
 
   &:hover {
     background-color: white;
-    -webkit-box-shadow: 0px 5px 50px -20px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0px 5px 50px -20px rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 5px 50px -20px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 2px 70px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 2px 70px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 70px 0px rgba(0, 0, 0, 0.18);
+    scale: 1.008;
   }
 `;
 
 const CardContent = styled.div`
-    padding: 8px 4px;
+  padding: 8px 4px;
 `;
 
 const CardTitle = styled.h2`
@@ -65,17 +82,26 @@ export const CardSubTitle = styled.p`
   font-size: 14px;
   line-height: 22px;
   color: #8387ab;
+  margin-bottom: 24px;
 `;
 
-export const CardAuthorInfo = styled.div``;
+export const CardAuthorInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
 
 export const CardAuthorName = styled.div`
   font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
   color: #0c134f;
 `;
 
 export const CardPublishedDate = styled.div`
   font-size: 12px;
+  line-height: 18px;
 `;
 
 export const CardImageContainer = styled.div`
@@ -89,3 +115,15 @@ export const CardImageContainer = styled.div`
   width: 100%;
   margin-bottom: 24px;
 `;
+
+const AuthorImage = styled.div`
+  img {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+    border-radius: 24px;
+  }
+  width: 35px;
+`;
+const ContentWrapper = styled.div``;
