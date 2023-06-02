@@ -59,7 +59,7 @@ const CardContainer = styled(Link)`
   }
 
   @media ${device.mobile} {
-    padding: 0;
+    padding: 14px;
   }
 `;
 

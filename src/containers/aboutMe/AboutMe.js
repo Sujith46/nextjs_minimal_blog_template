@@ -97,6 +97,6 @@ const SubHeding = styled.h2`
 
   @media ${device.mobile} {
     font-size: 14px;
-    line-height: 20px;
+    line-height: 26px;
   }
 `;
