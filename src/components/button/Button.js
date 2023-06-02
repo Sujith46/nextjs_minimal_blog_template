@@ -11,6 +11,11 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 12px;
   text-transform: uppercase;
+  transition: all 0.3 ease;
+
+  &:active {
+    scale: 0.96;
+  }
 `;
 
 export const PrimaryButton = styled(Button)`

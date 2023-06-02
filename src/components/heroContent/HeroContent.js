@@ -1,13 +1,38 @@
-"use client"
+"use client";
+
+import { motion } from "framer-motion";
 
 import { device } from "@/lib/device";
 import { styled } from "styled-components";
 
 const HeroContent = () => {
+  const container = {
+    hidden: { opacity: 0, y: 10 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
   return (
-    <Container>
-      <Title>Insights & Inspiration: Exploring the World Through Words</Title>
-      <SubTitle>
+    <Container
+      as={motion.div}
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
+      <Title as={motion.h1} variants={item}>
+        Insights & Inspiration: Exploring the World Through Words
+      </Title>
+      <SubTitle as={motion.h2} variants={item}>
         Discover a Collection of Captivating Stories, Informative Articles, and
         Thought-Provoking Ideas
       </SubTitle>

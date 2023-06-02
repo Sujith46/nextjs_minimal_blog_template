@@ -4,6 +4,7 @@ import Image from "next/image";
 import { styled } from "styled-components";
 
 import Avatar from "../../assets/images/avatars/author-default.jpg";
+import { device } from "@/lib/device";
 
 const AboutMe = () => {
   return (
@@ -12,7 +13,7 @@ const AboutMe = () => {
         <AboutContent>
           <GreetingText>hello,</GreetingText>
           <Heading>
-            Full Stack Frontend Engineer and Design System Expert
+            I'm a Full Stack Frontend Engineer and Design System Expert
           </Heading>
           <SubHeding>
             Sujith is a highly skilled full stack frontend engineer with
@@ -39,12 +40,21 @@ export default AboutMe;
 const Container = styled.div`
   padding: 16px 32px;
   margin-bottom: 64px;
+
+  @media ${device.mobile} {
+    padding: 16px;
+  }
 `;
 
 const AboutInfoWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 64px;
+
+    @media ${device.mobile} {
+      flex-direction: column;
+    }
 `;
 
 const AboutContent = styled.div``;
@@ -70,6 +80,11 @@ const Heading = styled.h1`
   font-weight: 800;
   margin-bottom: 16px;
   max-width: 800px;
+
+  @media ${device.mobile} {
+    font-size: 32px;
+    line-height: 40px;
+  }
 `;
 
 const SubHeding = styled.h2`
@@ -79,4 +94,9 @@ const SubHeding = styled.h2`
   font-weight: 400;
   color: #8387ab;
   max-width: 800px;
+
+  @media ${device.mobile} {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;

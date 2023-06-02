@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { styled } from "styled-components";
 import { PrimaryButton } from "../button/Button";
 import { device } from "@/lib/device";
@@ -16,7 +17,11 @@ const Footer = () => {
         <TextInput type="email" placeholder="Your e-mail address"></TextInput>
         <PrimaryButton>Subscribe</PrimaryButton>
       </InputContainer>
-      <Circle />
+      <Circle
+        as={motion.div}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, delay: 4 }}
+      />
     </Container>
   );
 };

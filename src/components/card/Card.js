@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 import DefaultImg from "../../assets/images/blog/default.jpg";
 import DefaultAuthorImg from "../../assets/images/avatars/author-default.jpg";
 import { device } from "@/lib/device";
+import { motion } from "framer-motion";
 
 const Card = ({
   imgURL,
@@ -14,12 +15,13 @@ const Card = ({
   author,
   publishedDate,
   authorImg,
+  variants,
 }) => {
   const defaultImgRequired = imgURL ? imgURL : DefaultImg;
   const authorDefaultImg = authorImg ? authorImg : DefaultAuthorImg;
 
   return (
-    <CardContainer href={"/"}>
+    <CardContainer as={motion.a} href={"/"} variants={variants}>
       <CardImageContainer>
         <Image src={defaultImgRequired} alt="blog-post-img" />
       </CardImageContainer>

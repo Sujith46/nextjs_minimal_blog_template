@@ -3,12 +3,28 @@
 import Card from "@/components/card/Card";
 import { BlogPostGrid } from "./BlogPost.styled";
 
-import HappyChild from "../../assets/images/blog/happy-child.jpg"
+import HappyChild from "../../assets/images/blog/happy-child.jpg";
 import ColorFull from "../../assets/images/blog/colourfull.jpg";
 import Court from "../../assets/images/blog/supreme-court.jpg";
 import Stretch from "../../assets/images/blog/stretch.jpg";
+import { motion } from "framer-motion";
 
 const BlogPost = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const childStyle = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
   const blogArray = [
     {
       title: "The Art of Storytelling",
@@ -16,7 +32,7 @@ const BlogPost = () => {
       date: "2023-05-15",
       authorName: "John Smith",
       tag: "Writing",
-      img: HappyChild
+      img: HappyChild,
     },
     {
       title: "Exploring the Wonders of Space",
@@ -52,14 +68,21 @@ const BlogPost = () => {
   ];
 
   return (
-    <BlogPostGrid>
+    <BlogPostGrid
+      as={motion.div}
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
       {blogArray?.map((item, index) => (
         <Card
+          key={index}
           title={item.title}
           subTitle={item.subTitle}
           author={item.authorName}
           publishedDate={item.date}
           imgURL={item.img}
+          variants={childStyle}
         />
       ))}
     </BlogPostGrid>
