@@ -47,22 +47,30 @@ const Container = styled.div`
 `;
 
 const AboutInfoWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
 
-    @media ${device.mobile} {
-      flex-direction: column;
-    }
+  @media ${device.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const AboutContent = styled.div``;
 
 const AboutImageContainer = styled.div`
-    img {
-        border-radius: 20px;
+  img {
+    border-radius: 20px;
+    
+    @media ${device.mobile} {
+      padding: 16px;
     }
+
+    @media ${device.tablets} {
+      padding: 16px;
+    }
+  }
 `;
 
 const GreetingText = styled.div`
